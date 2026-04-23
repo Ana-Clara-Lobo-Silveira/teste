@@ -21,7 +21,7 @@ export const iniciarMenu = () =>{
             botao.focus();
         }
     };
-    botao.addEventListener('pointdown', toggleMenu);
+    botao.addEventListener('pointerdown', toggleMenu);
     document.addEventListener('keydown', fecharComEsc);
     });
 };
