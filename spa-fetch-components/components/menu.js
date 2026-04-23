@@ -18,6 +18,6 @@ const criarMenu = (menu) =>{
         }
     };
     botao.addEventListener('click', toggleMenu);
-    document.addEventListener('keydown', fecharComEsc)
+    document.addEventListener('keydown', fecharComEsc);
 };
 document.querySelectorAll('[data-menu]').forEach((menu) => criarMenu(menu));
