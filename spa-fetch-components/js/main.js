@@ -36,7 +36,7 @@ const iniciarLinks = () =>{
 
 const iniciarApp = async () => {
     const containerMenu = document.querySelector('[data-componente="menu"]');
-    await carregarComponente('./componentes/menu.html', containerMenu);
+    await carregarComponente('./components/menu.html', containerMenu);
     iniciarMenu();
     iniciarLinks();
 
