@@ -18,7 +18,7 @@ const iniciarLinks = () =>{
     document.querySelectorAll('[data-link]').forEach((link) =>{
         link.addEventListener('click', async(event)=>{
             event.preventDefault();
-        const pagina = link.dataser.link;
+        const pagina = link.dataset.link;
         const menu = document.querySelector('[data-menu]');
         const botao = menu.querySelector('.menu__botao');
 
