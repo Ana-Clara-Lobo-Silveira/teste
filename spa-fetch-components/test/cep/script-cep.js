@@ -1,6 +1,9 @@
+const input = document.querySelector('#inputCep');
+const botao1 = document.querySelector('#botaoThen');
+const botao2 = document.querySelector('#botaoAsAw');
 
-/* Criar uma requisição HTTP com fetch e .then */
-const url = 'https://viacep.com.br/ws/01011000/json/';
+
+const url = `https://viacep.com.br/ws/01011000/json/`;
 const consulta = fetch(url)
 consulta
 .then((resposta) => { 
