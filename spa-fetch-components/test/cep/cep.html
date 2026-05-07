@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Fetch</title>
-    <script src="script-cep.js" defer></script>
+    <script src="./script-cep.js" defer></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            text-align: center;
+        }
+        .container button{
+            margin: 10px 0px;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Consulte o CEP</h1>
         <input type="text" id="inputCep"><br>
         <button id="botaoThen">Buscar com o .then</button>
         <button id="botaoAsAw">Buscar com async/await</button>
     </div>
+
 </body>
 </html>
