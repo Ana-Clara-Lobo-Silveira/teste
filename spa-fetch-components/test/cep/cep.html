@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Fetch</title>
-    <script src="./script-cep.js" defer></script>
+
     <style>
         *{
             margin: 0;
@@ -33,5 +33,46 @@
         <button id="botaoAsAw">Buscar com async/await</button>
     </div>
 
+        <script defer>
+const botao1 = document.getElementById('botaoThen');
+const botao2 = document.getElementById('botaoAsAw');
+
+const cep = document.getElementById('inputCep');
+
+function buscarCepThen(){
+    
+const url = `https://viacep.com.br/ws/${cep.value}/json/`;
+const consulta = fetch(url)
+
+consulta
+.then((resposta) => { 
+    if(!resposta.ok){
+        throw new Error('Erro na requisição.')
+    }
+    return resposta.json()
+})
+.then((dados) => {
+    if(dados.erro){
+        throw new Error('Verifique o CEP novamente!')
+    }
+    console.log(dados)})
+.catch((error) =>{console.warn(error.message)});
+};
+
+// -------------------------------------------------------------
+
+
+    
+
+async function buscarCep(){
+    const url = `https://viacep.com.br/ws/${cep.value}/json/`;
+    const consulta = fetch(url)
+    let resposta = await consulta;
+    let dataObj = await resposta.json();
+    console.log(dataObj)
+};
+
+botao1.addEventListener('click', buscarCepThen)
+botao2.addEventListener('click', buscarCep)</script>
 </body>
 </html>

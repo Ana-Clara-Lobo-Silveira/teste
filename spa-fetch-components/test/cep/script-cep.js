@@ -4,7 +4,8 @@ const botao2 = document.getElementById('botaoAsAw');
 
 const cep = document.getElementById('inputCep');
 
-botao1.addEventListener('click', () => {
+function buscarCepThen(){
+    
 const url = `https://viacep.com.br/ws/${cep.value}/json/`;
 const consulta = fetch(url)
 
@@ -21,7 +22,7 @@ consulta
     }
     console.log(dados)})
 .catch((error) =>{console.warn(error.message)});
-});
+};
 
 // -------------------------------------------------------------
 
@@ -36,5 +37,5 @@ async function buscarCep(){
     console.log(dataObj)
 };
 
-
+botao1.addEventListener('click', buscarCepThen)
 botao2.addEventListener('click', buscarCep)
